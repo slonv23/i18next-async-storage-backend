@@ -5,7 +5,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 import * as utils from './utils';
 
 // get from whatever version of react native that is being used.
-var AsyncStorage = require('@react-native-community/async-storage') || {};
+var AsyncStorage = require('@react-native-community/async-storage').default || {};
 
 var storage = {
   setItem: function setItem(key, value) {

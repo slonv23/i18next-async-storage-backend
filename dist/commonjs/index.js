@@ -15,7 +15,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // get from whatever version of react native that is being used.
-var AsyncStorage = require('@react-native-community/async-storage') || {};
+var AsyncStorage = require('@react-native-community/async-storage').default || {};
 
 var storage = {
   setItem: function setItem(key, value) {
