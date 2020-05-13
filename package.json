@@ -30,16 +30,16 @@
     "yargs": "6.6.0"
   },
   "peerDependencies": {
-    "@react-native-community/async-storage": "*"
+    "react-native": "*"
   },
   "scripts": {
     "clean": "rimraf dist && mkdirp dist",
     "copy": "cp ./dist/umd/i18nextAsyncStorageBackend.min.js ./i18nextAsyncStorageBackend.min.js && cp ./dist/umd/i18nextAsyncStorageBackend.js ./i18nextAsyncStorageBackend.js",
     "build:es": "BABEL_ENV=jsnext babel src --out-dir dist/es",
-    "build:cjs": "babel src --out-dir dist/commonjs",
-    "build:umd": "rollup -c rollup.config.js --format umd && rollup -c rollup.config.js --format umd --uglify",
-    "build:amd": "rollup -c rollup.config.js --format amd && rollup -c rollup.config.js --format umd --uglify",
-    "build:iife": "rollup -c rollup.config.js --format iife && rollup -c rollup.config.js --format iife --uglify",
+    "build:cjs": "npx babel src --out-dir dist/commonjs",
+    "build:umd": "npx rollup -c rollup.config.js --format umd && rollup -c rollup.config.js --format umd --uglify",
+    "build:amd": "npx rollup -c rollup.config.js --format amd && rollup -c rollup.config.js --format umd --uglify",
+    "build:iife": "npx rollup -c rollup.config.js --format iife && rollup -c rollup.config.js --format iife --uglify",
     "build": "npm run clean && npm run build:cjs && npm run build:es && npm run build:umd && npm run copy",
     "preversion": "npm run build && git push",
     "postversion": "git push && git push --tags"
